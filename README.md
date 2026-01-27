@@ -16,7 +16,7 @@ This repository is a fork of MarcusGrum/AI-CPS and contains our project implemen
         data/scrapped/WA_Fn-UseC_-HR-Employee-Attrition.csv
 
 #### Run the Project
-        git clone [<YOUR_REPO_LINK>](https://github.com/Adityaa4187/AI-CPS.git)
+        git clone https://github.com/Adityaa4187/AI-CPS.git
         cd AI-CPS
         pip install -r requirements.txt
         python main.py
