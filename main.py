@@ -12,6 +12,8 @@ from code.scrapping import download_dataset
 from code.preprocessing import run_step1_preprocessing
 from code.splitting import split_dataset
 from code.load_and_process import load_and_preprocess
+from scenarios.train_ann import train_ann, evaluate_ann
+from scenarios.train_logreg import train_logreg, evaluate_logreg
 
 def main():
     # Step 1
@@ -26,6 +28,14 @@ def main():
     # Step 4
     X_train, y_train, X_test, y_test, X_activation = load_and_preprocess()
 
+     # Step 5 - Train + Evaluate Models (with plots)
+    print("\n================ TRAINING MODELS ================\n")
+
+    logreg_model = train_logreg(X_train, y_train)
+    evaluate_logreg(logreg_model, X_test, y_test, threshold=0.5)
+
+    ann_model = train_ann(X_train, y_train, epochs=25, batch_size=32)
+    evaluate_ann(ann_model, X_test, y_test, threshold=0.5)
     
 
 if __name__ == "__main__":
