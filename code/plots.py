@@ -46,9 +46,10 @@ def plot_confusion_matrix(cm, labels, title, save_path):
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
     plt.figure(figsize=(5, 4))
-    plt.imshow(cm, interpolation="nearest")
-    plt.title(title)
-    plt.colorbar()
+    plt.imshow(cm, interpolation="nearest", cmap="Blues")
+    plt.title(title, fontsize=12, weight="bold")
+    cbar = plt.colorbar()
+    cbar.ax.set_ylabel("Count", rotation=270, labelpad=15)
 
     tick_marks = np.arange(len(labels))
     plt.xticks(tick_marks, labels)
@@ -58,15 +59,19 @@ def plot_confusion_matrix(cm, labels, title, save_path):
     for i in range(cm.shape[0]):
         for j in range(cm.shape[1]):
             plt.text(
-                j, i, str(cm[i, j]),
+                j, i, f"{cm[i, j]}",
                 ha="center",
+                va="center",
+                fontsize=11,
+                fontweight="bold",
                 color="white" if cm[i, j] > thresh else "black"
             )
 
-    plt.ylabel("Actual")
-    plt.xlabel("Predicted")
+    plt.ylabel("Actual Label", fontsize=11)
+    plt.xlabel("Predicted Label", fontsize=11)
 
     _save_show_close(save_path)
+
 
 
 def plot_roc_curve(y_true, y_prob, title, save_path):

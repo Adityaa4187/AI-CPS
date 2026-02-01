@@ -16,6 +16,7 @@ from scenarios.train_ann import train_ann, evaluate_ann
 from scenarios.train_logreg import train_logreg, evaluate_logreg
 from scenarios.train_ols import train_ols, evaluate_ols
 from scenarios.train_rf import train_rf, evaluate_rf
+from code.activation_inference import run_activation_inference
 
 def main():
     # Step 1
@@ -45,6 +46,10 @@ def main():
 
     ann_model = train_ann(X_train, y_train, epochs=25, batch_size=32)
     evaluate_ann(ann_model, X_test, y_test, threshold=0.5)
+
+    # Step 6 - Activation Blind Testing
+    print("\n\n\n ACTIVATION BLIND TEST \n")
+    run_activation_inference()
     
 
 if __name__ == "__main__":
