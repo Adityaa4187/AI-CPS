@@ -10,7 +10,7 @@ This repository is a fork of MarcusGrum/AI-CPS and contains our project implemen
 3. Dataset splitting into training, test, and activation sets
 4. Feature preprocessing and transformation pipeline
 5. Basic visualizations generated from the processed data
-6. Model training using Logistic Regression and Artificial Neural Networks
+6. Model training using OLS, Random Forest and Logistic Regression and Artificial Neural Networks
 7. Model evaluation with performance plots
 
 #### Implemented Files
@@ -22,7 +22,9 @@ This repository is a fork of MarcusGrum/AI-CPS and contains our project implemen
  5. code/plots.py – Generates basic visualizations from the dataset
  6. scenarios/train_ann.py – Trains an Artificial Neural Network model
  7. scenarios/train_logreg.py – Trains a Logistic Regression model
- 8. requirements.txt – Project dependencies
+ 8. scenarios/train_ols.py – Trains a OLS model
+ 9. scenarios/train_rf.py – Trains a Random Forest model
+ 10. requirements.txt – Project dependencies
 
 #### Output
 
@@ -53,14 +55,24 @@ This repository is a fork of MarcusGrum/AI-CPS and contains our project implemen
 ### Model Outputs
 #### Saved Models
 
+       documentation/Saved_models/ols_model.pkl
+       documentation/Saved_models/rf_model.pkl
        documentation/Saved_models/logreg_model.pkl
        documentation/Saved_models/ann_models.h5
 
-1. Logistic Regression plots:
+1. OLS plots:
+
+       reports/model_plots/ols/
+
+2. Random Forest plots:
+
+       reports/model_plots/rf/
+
+3. Logistic Regression plots:
 
        reports/model_plots/logreg/
 
-2. ANN plots:
+4. ANN plots:
 
        reports/model_plots/ann/
 
