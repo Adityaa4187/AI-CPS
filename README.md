@@ -99,3 +99,63 @@ Blind-test predictions on unseen employee data:
         python main.py
 
 This project will continue to expand with further preprocessing, modeling, and evaluation stages.
+
+# 🐳 Docker Execution (Pre-Built Images)
+This project can be executed using pre-built Docker images hosted on Docker Hub.
+No local Python setup is required.
+
+All Docker orchestration files are located in:
+```bash
+dockerPipeline/
+```
+A detailed step-by-step guide is available in:
+```bash
+dockerPipeline/README_docker.md
+```
+
+### Available Docker Images
+|Purpose	|Docker Image
+|---------|--------------|
+| **Model**  |Training Pipeline	adityaa0403/aibas_main_train|
+|**Activation & Risk Inference**	|adityaa0403/aibas_main_activation|
+
+### These images already contain:
+1. All dependencies
+2. Project code
+3. Preconfigured runtime environments
+
+### Pull the Required Images
+```bash
+docker pull adityaa0403/aibas_main_train
+docker pull adityaa0403/aibas_main_activation
+```
+
+### Run the Training Pipeline
+```bash
+docker compose up
+```
+This commad runs the full pipeline:
+1. Data preprocessing
+2. Dataset splitting
+3. Feature engineering
+4. Model training
+5. Evaluation and plot generation
+
+### Run Activation & Early Risk Inference
+```bash
+docker compose -f docker-compose_activation.yml up
+```
+
+This runs:
+1. Activation dataset inference
+2. Early attrition risk scoring
+3. Risk report generation
+
+#### Important Notes
+1. Docker ensures a reproducible, dependency-safe environment.
+2. No Python or library installation is needed locally.
+3. Compose files handle container configuration automatically.
+4. For volume mounting, rebuilding images, or advanced usage, see:
+   ```bash
+   dockerPipeline/README_docker.md
+```
