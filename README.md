@@ -156,6 +156,7 @@ This runs:
 2. No Python or library installation is needed locally.
 3. Compose files handle container configuration automatically.
 4. For volume mounting, rebuilding images, or advanced usage, see:
-   ```bash
+```bash
    dockerPipeline/README_docker.md
 ```
+
