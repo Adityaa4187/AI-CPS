@@ -1,4 +1,4 @@
-# AI-CPS Course Project
+9# AI-CPS Course Project
 
 #### Course: M. Grum – Advanced AI-based Application Systems
 This repository is a fork of MarcusGrum/AI-CPS and contains our project implementation using the same repository structure.
@@ -116,7 +116,7 @@ dockerPipeline/README_docker.md
 ### Available Docker Images
 |Purpose	|Docker Image
 |---------|--------------|
-| **Model**  |Training Pipeline	adityaa0403/aibas_main_train|
+| **Model Training Pipeline**  |	adityaa0403/aibas_main_train|
 |**Activation & Risk Inference**	|adityaa0403/aibas_main_activation|
 
 ### These images already contain:
@@ -159,4 +159,5 @@ This runs:
 ```bash
    dockerPipeline/README_docker.md
 ```
+
 
